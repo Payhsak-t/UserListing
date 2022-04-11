@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './AddNewUser.module.css';
 
-const AddNewUser = () => {
+const AddNewUser = (props) => {
   const [username, setUsername] = useState('');
   const [age, setAge] = useState(null);
 
@@ -17,7 +17,7 @@ const AddNewUser = () => {
   const submitUserHandler = (event) => {
     event.preventDefault();
     const newUser = { uname: { username }, uage: { age } };
-    console.log(newUser);
+    props.onAddUser(newUser);
   };
 
   return (

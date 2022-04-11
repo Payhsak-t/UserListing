@@ -2,9 +2,12 @@ import React from 'react';
 import AddNewUser from './components/AddNewUser';
 
 function App() {
+  const newUserHandler = (user) => {
+    console.log(user);
+  };
   return (
     <div>
-      <AddNewUser />
+      <AddNewUser onAddUser={newUserHandler} />
     </div>
   );
 }
